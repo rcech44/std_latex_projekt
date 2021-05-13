@@ -5,13 +5,13 @@
 \usepackage{lmodern}
 %\usepackage[cp1250]{inputenc} % pro win1250
 \usepackage{fancyhdr}
-%\usepackage{tabto}
+%\usepackage{tabto} -- nakonec nevyuzito
 \usepackage{cmap}
 \usepackage{siunitx}
 \usepackage{xcolor}
 \usepackage{amsmath}
 \usepackage{multirow}
-%\usepackage{caption}
+%\usepackage{caption} -- neni potreba
 \usepackage{graphicx}
 \usepackage{fontenc}[T1]
 \usepackage{booktabs}
@@ -29,7 +29,7 @@
 \definecolor{keywords}{rgb}{0.145,0.6,0.698}
 \definecolor{identifier}{rgb}{0.145,0.6,0.698}
 
-\lstdefinestyle{mystyle}{
+\lstdefinestyle{python_style}{
 language=Python,
 backgroundcolor=\color{backcolour},
 commentstyle=\slshape\color{codegreen},
@@ -51,34 +51,29 @@ tabsize=3
 }
 
 \newenvironment{algoritmus}[1][htb]
-  {\renewcommand{\algorithmcfname}{Algoritmus}% Update algorithm name
+  {\renewcommand{\algorithmcfname}{Algoritmus}  % -- Prepsani nazvu algoritmu
    \begin{algorithm}[#1]%
   }{\end{algorithm}}
 
-\def\blankpage{%
+\def\blankpage{%        %% definovani prazdne stranky, workaround
       \clearpage%
       \null%
       \clearpage}
 
-\lstset{style=mystyle}
-
-%\newcommand\tab[1][1cm]{\hspace*{#1}}
+\lstset{style=python_style}
 
 \newcommand{\floor}[1]{\lfloor #1 \rfloor}
 \newcommand{\Mod}[1]{\ \mathrm{mod}\ #1}
 
 \pagestyle{fancy}
-\fancyhf{} % sets both header and footer to nothing
+\fancyhf{} % nastaveni prazdnych zahlavi a zapati
 \renewcommand{\headrulewidth}{0pt}
-% your new footer definitions here
-%\lhead{Sazba technických dokumentů - semestrální projekt}
 \fancyhead[RO]{Sazba technických dokumentů - semestrální projekt}
 \fancyhead[LE]{Sazba technických dokumentů - semestrální projekt}
 \fancyfoot[LE]{\thepage}
 \fancyfoot[RE]{Radomír Čech, CEC0144}
 \fancyfoot[RO]{\thepage}
 \fancyfoot[LO]{Radomír Čech, CEC0144}
-%\setlength{\parindent}{5pt}
 
 \newtheorem{definition}{Definice}[section]
 
@@ -200,20 +195,19 @@ Nacházeli u psychologické pojmy 2010 podnikatelské svrhnout zlata ale napří
     \begin{tabular}{l r @ {} l r @ {} l r @ {} l r @ {} l r @ {} l}
     \toprule
      & \multicolumn{6}{c}{Algoritums 1} \\
-    \cmidrule(lr){2-3}
-    %\cline{2-3}
+    \cmidrule(lr){2-7}
       & \multicolumn{2}{c}{$\alpha$} &  \multicolumn{2}{c}{$\beta$} & \multicolumn{2}{c}{$\gamma$} & \multicolumn{2}{c}{$\delta$} & \multicolumn{2}{c}{$\chi$}\\
     \midrule
-    Pokus 1 & -91&,6 & -75&,2 & 74&,016 & 20&,714 & -60&,4\\
-    Pokus 2 & 98&,1093 & -59&,9 & 28&,7719 & 71&,8653 & -9\\
-    Pokus 3 & 50&,3021 & -28& & 99&,1016 & 50&,33319 & -58&,52\\
-    Pokus 4 & 76&,95254 & -89&,1 & 27&,484 & -68&,98 & -7&,69\\
-    Pokus 5 & 1&,9677 & -47&,3 & -99&,07 & 7&,934 & -62&,3\\
-    Pokus 6 & -66& & -49&,1 & -81&,8 & -14&,68 & -67\\
-    Pokus 7 & 28&,8928 & 92&,27074 & -40&,65 & 18&,498 & 53&,8839\\
-    Pokus 8 & -64& & -87&,71 & 38&,865 & 3&,746 & -58\\
-    Pokus 9 & 69&,564 & 87&,22619 & 70&,082 & 46&,7614 & -47&,5\\
-    Pokus 10 & -11&,4 & 47&,873 & 83&,437 & -58&,8 & -30&,4\\
+    Pokus 1 & -91   &,6     & -75   &,2     & 74    &,016   & 20    &,714   & -60   &,4\\
+    Pokus 2 & 98    &,1093  & -59   &,9     & 28    &,7719  & 71    &,8653  & -9\\
+    Pokus 3 & 50    &,3021  & -28   &       & 99    &,1016  & 50    &,33319 & -58   &,52\\
+    Pokus 4 & 76    &,95254 & -89   &,1     & 27    &,484   & -68   &,98    & -7    &,69\\
+    Pokus 5 & 1     &,9677  & -47   &,3     & -99   &,07    & 7     &,934   & -62   &,3\\
+    Pokus 6 & -66   &       & -49   &,1     & -81   &,8     & -14   &,68    & -67\\
+    Pokus 7 & 28    &,8928  & 92    &,27074 & -40   &,65    & 18    &,498   & 53    &,8839\\
+    Pokus 8 & -64   &       & -87   &,71    & 38    &,865   & 3     &,746   & -58\\
+    Pokus 9 & 69    &,564   & 87    &,22619 & 70    &,082   & 46    &,7614  & -47   &,5\\
+    Pokus 10 & -11  &,4     & 47    &,873   & 83    &,437   & -58   &,8     & -30   &,4\\
     \bottomrule
     \end{tabular}
     \caption{Experimentální výsledky}
